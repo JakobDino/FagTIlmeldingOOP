@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace FagTIlmeldingOOP.CustomClass
 {
-    internal class Student : Identity
+    internal class Identity
     {
-        public Student(int id, string fNavn, string lNavn, DateTime birth)
+        public Identity(string fNavn, string lNavn, DateTime birth)
         {
-            StudentId = id;
             FirstName = fNavn;
             LastName = lNavn;
             DateOfBirth = birth;
@@ -18,6 +17,9 @@ namespace FagTIlmeldingOOP.CustomClass
             double j = t.TotalDays / 365;
             Age = (int)j;
         }
-        public int StudentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public int Age { get; set; }
     }
 }

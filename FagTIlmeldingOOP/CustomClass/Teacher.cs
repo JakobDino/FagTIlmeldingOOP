@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FagTIlmeldingOOP.CustomClass
 {
-    internal class Teacher
+    internal class Teacher : Identity
     {
         public Teacher(string dep, string fNavn, string lNavn, DateTime birth)
         {
