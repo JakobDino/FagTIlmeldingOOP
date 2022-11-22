@@ -10,7 +10,7 @@ Student camilla = new(1, "Camilla", "Kløjgaard", new DateTime(1997, 2, 10));
 Course studi = new("Studieteknik", niels);
 Course grundl = new("Grundlæggendeprogrammering", niels);
 Course oop = new("OOP", niels);
-
+Person p = new();
 List<Enrollment> enrollment = new()
 {
 new Enrollment(jakob, studi),

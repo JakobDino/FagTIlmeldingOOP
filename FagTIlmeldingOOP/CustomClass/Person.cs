@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FagTIlmeldingOOP.CustomClass
 {
-    internal class Identity
+    internal abstract class Person
     {
-        public Identity(string fNavn, string lNavn, DateTime birth)
+        public Person(string fNavn, string lNavn, DateTime birth)
         {
             FirstName = fNavn;
             LastName = lNavn;

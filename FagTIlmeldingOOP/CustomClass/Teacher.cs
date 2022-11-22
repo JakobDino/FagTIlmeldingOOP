@@ -6,22 +6,12 @@ using System.Threading.Tasks;
 
 namespace FagTIlmeldingOOP.CustomClass
 {
-    internal class Teacher : Identity
+    internal sealed class Teacher : Person
     {
-        public Teacher(string dep, string fNavn, string lNavn, DateTime birth)
+        public Teacher(string dep, string fNavn, string lNavn, DateTime birth) : base(fNavn, lNavn, birth)
         {
             Department = dep;
-            FirstName = fNavn;
-            LastName = lNavn;
-            DateOfBirth = birth;
-            TimeSpan t = DateTime.Now - DateOfBirth;
-            double j = t.TotalDays / 365;
-            Age = (int)j;
         }
         public string Department { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth{ get; set; }
-        public int Age { get; set; }
     }
 }
