@@ -21,5 +21,20 @@ namespace FagTIlmeldingOOP.CustomClass
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Age { get; set; }
+
+        public int AgeCall()
+        {
+            TimeSpan t = DateTime.Now - DateOfBirth;
+            double j = t.TotalDays / 365;
+            Age = (int)j;
+            return Age;
+        }
+        internal abstract List<string> GetAllCourses(Enrollment enrollments);
+
+        public virtual DateTime Day()
+        {
+            return DateTime.Now;
+        }
+
     }
 }

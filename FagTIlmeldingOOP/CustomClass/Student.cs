@@ -13,5 +13,21 @@ namespace FagTIlmeldingOOP.CustomClass
             StudentId = id;
         }
         public int StudentId { get; set; }
+        internal override List<string> GetAllCourses(Enrollment enrollments)
+        {
+            List<string> courses = new List<string>();
+            foreach (var item in enrollments.enrollment1)
+            {
+                if (FirstName == item.StudentInfo.FirstName && LastName == item.StudentInfo.LastName)
+                {
+                    courses.Add(item.CourseInfo.CourseName);
+                }
+            }
+            //foreach (var item in courses)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            return courses;
+        }
     }
 }

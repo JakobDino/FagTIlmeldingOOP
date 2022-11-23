@@ -13,5 +13,28 @@ namespace FagTIlmeldingOOP.CustomClass
             Department = dep;
         }
         public string Department { get; set; }
+        public string DepCall()
+        {
+            return Department;
+        }
+        internal override List<string> GetAllCourses(Enrollment enrollments)
+        {
+            List<string> courses = new List<string>();
+            foreach (var item in enrollments.enrollment1)
+            {
+                if (FirstName == item.CourseInfo.TeacherInfo.FirstName && LastName == item.CourseInfo.TeacherInfo.LastName)
+                {
+                    if (!courses.Contains(item.CourseInfo.CourseName))
+                    {
+                        courses.Add(item.CourseInfo.CourseName);
+                    }
+                }
+            }
+            return courses;
+        }
+        public override DateTime Day()
+        {
+            return DateTime.Now.AddDays(1);
+        }
     }
 }
