@@ -24,14 +24,35 @@ namespace FagTIlmeldingOOP.CustomClass
             {
                 if (FirstName == item.CourseInfo.TeacherInfo.FirstName && LastName == item.CourseInfo.TeacherInfo.LastName)
                 {
-                    if (!courses.Contains(item.CourseInfo.CourseName))
+                    if (!courses.Contains(Convert.ToString(item.CourseInfo.CourseName)))
                     {
-                        courses.Add(item.CourseInfo.CourseName);
+                        courses.Add(Convert.ToString(item.CourseInfo.CourseName));
                     }
                 }
             }
             return courses;
         }
+
+
+        internal override List<string> GetAllCourses(List<Enrollment> enrollmentList)
+        {
+            List<string> courses = new List<string>();
+            foreach (var item in enrollmentList)
+            {
+                if (FirstName == item.CourseInfo.TeacherInfo.FirstName && LastName == item.CourseInfo.TeacherInfo.LastName)
+                {
+                    if (!courses.Contains(Convert.ToString(item.CourseInfo.CourseName)))
+                    {
+                        courses.Add(Convert.ToString(item.CourseInfo.CourseName));
+                    }
+                }
+            }
+            return courses;
+        }
+
+
+
+
         public override DateTime Day()
         {
             return DateTime.Now.AddDays(1);

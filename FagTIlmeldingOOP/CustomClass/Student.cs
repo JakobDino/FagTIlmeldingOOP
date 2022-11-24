@@ -20,13 +20,27 @@ namespace FagTIlmeldingOOP.CustomClass
             {
                 if (FirstName == item.StudentInfo.FirstName && LastName == item.StudentInfo.LastName)
                 {
-                    courses.Add(item.CourseInfo.CourseName);
+                    courses.Add(Convert.ToString(item.CourseInfo.CourseName));
                 }
             }
             //foreach (var item in courses)
             //{
             //    Console.WriteLine(item);
             //}
+            return courses;
+        }
+
+
+        internal override List<string> GetAllCourses(List<Enrollment> enrollmentList)
+        {
+            List<string> courses = new List<string>();
+            foreach (var item in enrollmentList)
+            {
+                if (FirstName == item.StudentInfo.FirstName && LastName == item.StudentInfo.LastName)
+                {
+                    courses.Add(Convert.ToString(item.CourseInfo.CourseName));
+                }
+            }
             return courses;
         }
     }

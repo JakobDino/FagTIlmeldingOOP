@@ -8,14 +8,14 @@ namespace FagTIlmeldingOOP.CustomClass
 {
     internal class Course
     {
-        public Course(string courseName, Teacher teacherInfo)
+        public Course(FagEnum courseName, Teacher teacherInfo)
         {
             CourseName = courseName;
             
             TeacherInfo = teacherInfo;
         }
 
-        public string CourseName { get; set; }
+        public FagEnum CourseName { get; set; }
         public Teacher TeacherInfo { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FagTIlmeldingOOP.CustomClass
 {
-    internal abstract class Person
+    internal abstract class Person 
     {
         public Person(string fNavn, string lNavn, DateTime birth)
         {
@@ -29,7 +29,8 @@ namespace FagTIlmeldingOOP.CustomClass
             Age = (int)j;
             return Age;
         }
-        internal abstract List<string> GetAllCourses(Enrollment enrollments);
+        internal abstract List<string> GetAllCourses (Enrollment enrollments);
+        internal abstract List<string> GetAllCourses(List<Enrollment> enrollmentList);
 
         public virtual DateTime Day()
         {
