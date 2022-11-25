@@ -15,7 +15,7 @@ namespace FagTIlmeldingOOP.CustomClass
         }
         public Student StudentInfo { get; set; }
         public Course CourseInfo { get; set; }
-
+        
         public List<Enrollment> enrollment1 { get; set; }
         public Enrollment()
         {

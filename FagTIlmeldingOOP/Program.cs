@@ -59,11 +59,37 @@ do
         }
     } while (!loopClose1);
 
+    if (fagValg == Convert.ToString(FagEnum.ClientsideProgrammering))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), client));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.Studieteknik))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), studi));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.Grundlæggendeprogrammering))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), grundl));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.OOP))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), oop));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.Databaseprogrammering))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), datab));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.Computerteknologi))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), comptek));
+    }
+    else if (fagValg == Convert.ToString(FagEnum.Netværk))
+    {
+        enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), netværk));
+    }
 
-    enrollments.enrollment1.Add(new Enrollment(new Student(elevid, fNavn, lNavn, føzDag), oop));
     foreach (var item in enrollments.enrollment1)
     {
-        Console.WriteLine(enrollments.enrollment1);
         Console.WriteLine($"{item.StudentInfo.FirstName} {item.StudentInfo.LastName}, fag: " +
         $"{item.CourseInfo.CourseName}, lærer: {item.CourseInfo.TeacherInfo.FirstName} " +
         $"{item.CourseInfo.TeacherInfo.LastName}");
